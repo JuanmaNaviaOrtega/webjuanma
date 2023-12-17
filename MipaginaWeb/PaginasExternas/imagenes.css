@@ -1,0 +1,6 @@
+#image {
+    background-color: red;
+   /* opacity: 0.3;*/
+    background-image: url("coffee.png");
+height: 1000px;
+}

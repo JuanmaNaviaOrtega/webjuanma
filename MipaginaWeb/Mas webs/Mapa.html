@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+
+</head>
+<style>
+    #map { height: 800px; }
+</style>
+<body>
+<div id="map"></div>
+
+</body>
+<script>
+    const lat = 36.749424;
+    const lon =-4.418794;
+    var map = L.map('map').setView([lat, lon], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright"></a> contributors'
+    }).addTo(map);
+
+    L.marker([lat, lon]).addTo(map)
+        .bindPopup('<div class="card" style="width: 18rem;">' +
+            '  <img src="http://vps456458.ovh.net/lm/Imagenes/25aniv_800x400.jpg" width="300px"  alt="...">' +
+            '  <div class="card-body">' +
+            '    <h5 class="card-title">I.E.S Portada Alta</h5>' +
+            '    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content.</p>' +
+            '    <a href="#" class="btn btn-primary">IR</a>' +
+            '  </div>' +
+            '</div>')
+        .openPopup();
+
+</script>
+</html>
